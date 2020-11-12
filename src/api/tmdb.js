@@ -16,3 +16,29 @@ export const tmdbPupularMovie = async () => {
 
     return data.data;
 }
+
+export const tmdbMovieDetails = async(id) => {
+    const data = await axios.get(`${basicQueary}/movie/${id}`,{params: {
+        language:"en-US",
+        api_key: API_KEY,
+    }});
+
+    return data.data;
+
+}
+
+export const tmdbMovieCast = async(id) => {
+    const data = await axios.get(`${basicQueary}/movie/${id}/credits`,{params: {
+        api_key: API_KEY,
+    }});
+
+    return data.data.cast;
+}
+
+export const tmdbMovieVideos = async(id) => {
+    const data =  await axios.get (`${basicQueary}/movie/${id}/videos`,{params: {
+        api_key: API_KEY,
+    }});
+
+    return data.data.results;
+}

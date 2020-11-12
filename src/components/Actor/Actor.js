@@ -2,7 +2,7 @@ import React from "react";
 import {withRouter} from "react-router-dom";
 
 
-const Card = (props) => {
+const Actor = (props) => {
     const image = props.poster ? `http://image.tmdb.org/t/p/w185//${props.poster}`
     : "http://underscoremusic.co.uk/site/wp-content/uploads/2014/05/no-poster.jpg"
     const cardStyle = {
@@ -14,18 +14,12 @@ const Card = (props) => {
 
     const handleOnClick = () => {
         props.history.push(`/movie/${props.id}`);
-        // props.history.push({
-        //       pathname: `/movie/${props.id}`,
-        //       state:{id:props.id} 
-        // })
     }
     return(
         <div onClick={handleOnClick} style={cardStyle}>
-            <h1> {props.title}</h1>
-            <div>{props.rating}</div>
-            <div>{props.year}</div>
+            <h3> {props.name}</h3>
         </div>
     );
 };
 
-export default withRouter(Card);
+export default withRouter(Actor);

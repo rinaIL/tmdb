@@ -1,9 +1,12 @@
 import React from "react";
 import MovieList from "../MovieList/MovieList";
 
-const Home = () => {
+
+const Home = (props) => {
+    console.log("Home",props);
     return(
-        <div>
+        <div >
+ 
             <MovieList category="popular"></MovieList>
         </div>
     );
